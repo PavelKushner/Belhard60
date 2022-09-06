@@ -3,3 +3,6 @@ text = input()
 text_new = text.split()
 text = '-'.join(text_new)
 print(text)
+
+text = input()
+print(text.replace(' ', '-'))
