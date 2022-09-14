@@ -1,2 +1,3 @@
-new_list = [2**i for i in range(int(input())+1)]
+# Заполнить список степенями числа 2 (от 2^1 до 2^n)
+new_list = [2**i for i in range(1, int(input())+1)]
 print(new_list)
