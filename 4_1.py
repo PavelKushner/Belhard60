@@ -1,6 +1,2 @@
-number_degree = int(input())
-new_list = []
-for i in range(number_degree+1):
-    number = 2**i
-    new_list.append(number)
+new_list = [2**i for i in range(int(input())+1)]
 print(new_list)
