@@ -2,7 +2,7 @@
 number_1 = int(input('Введи первое число: '))
 effect = input('Что нужно сделать?: ')
 while effect not in '+-/**':
-    print('Такого действия не существует. Повтори операцию')
+    print('Такого действия не существует. Повтори операцию!')
     effect = input('Что нужно сделать?: ')
 number_2 = int(input('Введи второе число: '))
 try:
@@ -17,4 +17,4 @@ try:
     elif effect == '**':
         print(number_1 ** number_2)
 except ZeroDivisionError as e:
-    print('на ноль делить нельзя')
+    print('на ноль делить нельзя!')
