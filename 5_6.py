@@ -4,6 +4,6 @@ b = input()
 counter = 0
 for i in range(len(a)):
     for j in range(len(b)):
-        if a[i] == b[j] and i == j:
+        if a[i] == b[j] and i == j and not a[i].isdigit():
             counter += 1
 print(counter)
