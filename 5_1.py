@@ -4,10 +4,9 @@ M = int(input('Введи число для проверки на кратнос
 K = int(input('Число, которое не должно превышать выводимое число:'))
 num = 0
 numbers = []
-counter = K
 while num != N:
-    counter += 1
-    if counter % M == 0:
-        numbers.append(counter)
+    K += 1
+    if K % M == 0:
+        numbers.append(K)
         num += 1
 print(numbers)
