@@ -6,10 +6,14 @@ morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
          '4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.'}
 
 def translate(text):
+    text = text.upper()
     cod_Morse = []
     for i in range(len(text)):
-        cod_Morse.append(morse[text[i]])
+        if text[i] in 'ABCDEFGHIGKLMNOPQRSTUVWXYZ1234567890':
+            cod_Morse.append(morse[text[i]])
+        else:
+            print("In English please")
     print(*cod_Morse)
 
 
-translate(input().upper())
+translate(input())
