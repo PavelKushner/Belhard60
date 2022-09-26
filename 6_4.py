@@ -5,10 +5,10 @@
 def func(grand_list):
     s = len(grand_list)
     while s != 0:
-        if type(grand_list[s-1]) != type(''):
-            del grand_list[s-1]
+        if isinstance(grand_list[s-1], str):
             s -= 1
         else:
+            del grand_list[s - 1]
             s -= 1
     print(grand_list)
 
