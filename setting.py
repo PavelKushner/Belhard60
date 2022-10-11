@@ -1,0 +1,1 @@
+DATABASE_URL: str = 'postgresql://postgres:5838@localhost:5432/learn'
