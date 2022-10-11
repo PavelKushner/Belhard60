@@ -1,3 +1,4 @@
+
 from sqlalchemy.orm import declarative_base
 from datetime import datetime
 from sqlalchemy import Column, Integer, VARCHAR, TIMESTAM, Boolean, ForeinKey, DECIMAL
