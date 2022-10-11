@@ -126,65 +126,65 @@ def create_table() -> None:
 
 create_table()
 
-def fill_users(users: tuple) -> None:
-    for user in users:
-        cur.execute('''
-        INSERT INTO users(
-        name, email) VALUES(?, ?);
-        ''', user)
-        conn.commit()
+# def fill_users(users: tuple) -> None:
+#     for user in users:
+#         cur.execute('''
+#         INSERT INTO users(
+#         name, email) VALUES(?, ?);
+#         ''', user)
+#         conn.commit()
+#
+# fill_users(load_users())
+#
+# def fill_statuses(statuses: tuple) -> None:
+#     for status in statuses:
+#         cur.execute('''
+#         INSERT INTO statuses(name)
+#         VALUES(?);
+#         ''', status)
+#         conn.commit()
+#
+# fill_statuses(load_statues())
 
-fill_users(load_users())
-
-def fill_statuses(statuses: tuple) -> None:
-    for status in statuses:
-        cur.execute('''
-        INSERT INTO statuses(name) 
-        VALUES(?);
-        ''', status)
-        conn.commit()
-
-fill_statuses(load_statues())
-
-def fill_orders(orders: tuple) -> None:
-    for order in orders:
-        cur.execute('''
-        INSERT INTO orders (user_id, status_id)
-        VALUES (?, ?);
-        ''', order)
-        conn.commit()
-
-fill_orders(load_orders())
-
-def fill_order_items(order_items: tuple) -> None:
-    for items in order_items:
-        cur.execute('''
-        INSERT INTO order_items (order_id, product_id)
-        VALUES (?, ?);
-        ''', items)
-        conn.commit()
-
-fill_order_items(load_order_items())
-
-def fill_categories(categories: tuple) -> None:
-    for category in categories:
-        cur.execute('''
-        INSERT INTO categories (name)
-        VALUES (?);
-        ''', category)
-        conn.commit()
-
-fill_categories(load_categories())
-
-def fill_products(products: tuple) -> None:
-    for product in products:
-        cur.execute('''
-        INSERT INTO products (title, description, category_id)
-        VALUES (?, ?, ?);
-        ''', product)
-        conn.commit()
-
-fill_products(load_products())
+# # def fill_orders(orders: tuple) -> None:
+# #     for order in orders:
+# #         cur.execute('''
+# #         INSERT INTO orders (user_id, status_id)
+# #         VALUES (?, ?);
+# #         ''', order)
+# #         conn.commit()
+#
+# fill_orders(load_orders())
+#
+# def fill_order_items(order_items: tuple) -> None:
+#     for items in order_items:
+#         cur.execute('''
+#         INSERT INTO order_items (order_id, product_id)
+#         VALUES (?, ?);
+#         ''', items)
+#         conn.commit()
+#
+# fill_order_items(load_order_items())
+#
+# def fill_categories(categories: tuple) -> None:
+#     for category in categories:
+#         cur.execute('''
+#         INSERT INTO categories (name)
+#         VALUES (?);
+#         ''', category)
+#         conn.commit()
+#
+# fill_categories(load_categories())
+#
+# def fill_products(products: tuple) -> None:
+#     for product in products:
+#         cur.execute('''
+#         INSERT INTO products (title, description, category_id)
+#         VALUES (?, ?, ?);
+#         ''', product)
+#         conn.commit()
+#
+# fill_products(load_products())
 
 
 cur.execute('''
@@ -194,5 +194,10 @@ print(cur.fetchall())
 
 cur.execute('''
 SELECT name, email FROM users, orders WHERE users.id=user_id;
+''')
+print(cur.fetchall())
+
+cur.execute('''
+SELECT statuses.name FROM statuses INNER JOIN orders ON orders.status_id=statuses.id;
 ''')
 print(cur.fetchall())
